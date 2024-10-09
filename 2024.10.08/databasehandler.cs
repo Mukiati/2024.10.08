@@ -30,6 +30,7 @@ namespace _2024._10._08
                 string query = $"SELECT * FROM {tablename}";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 MySqlDataReader read = command.ExecuteReader();
+                car.cars.Clear();
                 while (read.Read())
                 {
                     car onecar = new car();
@@ -40,7 +41,7 @@ namespace _2024._10._08
                     car.cars.Add(onecar);
 
                 }
-                MessageBox.Show("sikeres beolvasás");
+                //MessageBox.Show("sikeres beolvasás");
                 read.Close();
                 command.Dispose();
                 connection.Close();
@@ -63,7 +64,7 @@ namespace _2024._10._08
 
                 command.Dispose();
                 connection.Close();
-                MessageBox.Show("sikeres törlés");
+                //MessageBox.Show("sikeres törlés");
             }
             catch (Exception e)
             {
@@ -82,7 +83,7 @@ namespace _2024._10._08
 
                 command.Dispose();
                 connection.Close();
-                MessageBox.Show("sikeres törlés");
+                //MessageBox.Show("sikeres törlés");
             }
             catch (Exception e)
             {
@@ -101,7 +102,7 @@ namespace _2024._10._08
 
                 command.Dispose();
                 connection.Close();
-                MessageBox.Show("sikeres hozzáadás");
+                //MessageBox.Show("sikeres hozzáadás");
             }
             catch (Exception e)
             {
